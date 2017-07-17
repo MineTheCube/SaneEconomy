@@ -9,6 +9,30 @@
     <version>0</version>
     <packaging>pom</packaging>
 
+    <properties>
+        <!-- Project Properties -->
+        <projectEncoding>UTF-8</projectEncoding>
+        <project.build.sourceEncoding>${projectEncoding}</project.build.sourceEncoding>
+        <project.build.outputEncoding>${projectEncoding}</project.build.outputEncoding>
+
+        <!-- JDK Version -->
+        <jdkVersion>1.8</jdkVersion>
+
+        <!-- Export -->
+        <module.export>../out/</module.export>
+
+        <!-- Module versions -->
+        <version.SaneEconomyCore>0.12.8</version.SaneEconomyCore>
+        <version.SaneEconomyMobKills>0.1.3</version.SaneEconomyMobKills>
+        <version.SaneEconomyOnlineTime>0.1.0</version.SaneEconomyOnlineTime>
+        <version.SaneEconomySignShop>0.12.7</version.SaneEconomySignShop>
+
+        <!-- Dependencies versions -->
+        <version.SaneLib>0.3.5</version.SaneLib>
+        <version.SpigotAPI>1.12-R0.1-SNAPSHOT</version.SpigotAPI>
+        <version.VaultAPI>1.6</version.VaultAPI>
+    </properties>
+
     <modules>
         <module>SaneEconomyCore</module>
         <module>SaneEconomySignShop</module>
@@ -37,17 +61,17 @@
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>1.12-R0.1-SNAPSHOT</version>
+            <version>${version.SpigotAPI}</version>
         </dependency>
         <dependency>
             <groupId>net.milkbowl.vault</groupId>
             <artifactId>VaultAPI</artifactId>
-            <version>1.6</version>
+            <version>${version.VaultAPI}</version>
         </dependency>
         <dependency>
             <groupId>org.appledash</groupId>
             <artifactId>sanelib</artifactId>
-            <version>0.3.5-SNAPSHOT</version>
+            <version>${version.SaneLib}</version>
         </dependency>
     </dependencies>
 </project>

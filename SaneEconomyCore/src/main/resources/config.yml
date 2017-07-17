@@ -1,3 +1,8 @@
+#
+# ---------------------------
+#   ${artifactId} v${project.version}
+# ---------------------------
+#
 backend:
   type: json
 
@@ -6,9 +11,13 @@ currency:
     singular: dollar
     plural: dollars
   balance-format: '{1} {2}'
-  format: '0.00'
-  grouping: 3
-  grouping-separator: ','
+
+  custom-format:
+    enabled: false
+    format: '0.00'
+    grouping: 3
+    decimal-separator: '.'
+    grouping-separator: ','
 
 chat:
   prefix: '&b[&9Economy&b]&r '

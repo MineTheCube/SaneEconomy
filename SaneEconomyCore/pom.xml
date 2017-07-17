@@ -3,13 +3,19 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    
     <parent>
         <groupId>org.appledash</groupId>
         <artifactId>SaneEconomy</artifactId>
         <version>0</version>
     </parent>
+
     <artifactId>SaneEconomyCore</artifactId>
-    <version>0.12.7-SNAPSHOT</version>
+    <version>${version.SaneEconomyCore}</version>
+
+    <properties>
+        <plugin.package>${groupId}.saneeconomy</plugin.package>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -27,25 +33,34 @@
 
     <build>
         <finalName>${project.artifactId}-${project.version}</finalName>
+        <defaultGoal>clean install</defaultGoal>
+
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
+                <filtering>true</filtering>
             </resource>
         </resources>
+
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.3</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>${jdkVersion}</source>
+                    <target>${jdkVersion}</target>
+                    <encoding>${projectEncoding}</encoding>
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
                 <version>3.0.0</version>
+                <configuration>
+                    <!--<minimizeJar>true</minimizeJar>-->
+                    <createDependencyReducedPom>false</createDependencyReducedPom>
+                </configuration>
                 <executions>
                     <execution>
                         <phase>package</phase>
@@ -89,7 +104,7 @@
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>2.4</version>
                 <configuration>
-                    <outputDirectory>../out/</outputDirectory>
+                    <outputDirectory>${module.export}</outputDirectory>
                 </configuration>
             </plugin>
         </plugins>

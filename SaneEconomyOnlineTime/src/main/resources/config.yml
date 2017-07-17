@@ -1,3 +1,8 @@
+#
+# ---------------------------
+#   ${artifactId} v${project.version}
+# ---------------------------
+#
 chat:
   prefix: '&b[&OnlineTime&b]&r '
   silent: false

@@ -1,6 +1,6 @@
-name: SaneEconomyOnlineTime
-main: org.appledash.saneeconomy.onlinetime.SaneEconomyOnlineTime
+name: ${artifactId}
+main: ${plugin.package}.${artifactId}
+version: ${project.version}
 description: Pays players for being online!
 author: AppleDash
-version: 0.1.0
 depend: [SaneEconomy]
